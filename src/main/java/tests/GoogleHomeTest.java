@@ -17,7 +17,6 @@ public class GoogleHomeTest {
     static void setupAll() {
         WebDriverManager.chromedriver().setup();
     }
-
     @BeforeClass
     void setup() {
         driver = new ChromeDriver();
@@ -31,7 +30,7 @@ public class GoogleHomeTest {
     public void pageTitleTest() {
         driver.get("http://www.google.com"); //TODO move to base URL
         SoftAssert sa = new SoftAssert();
-        sa.assertEquals(driver.getTitle(),"Google");
+        sa.assertEquals(driver.getTitle(), "Google","The page title for the page returned was " + driver.getTitle());
         sa.assertAll();
     }
 
