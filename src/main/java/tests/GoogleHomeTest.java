@@ -17,6 +17,7 @@ public class GoogleHomeTest {
     static void setupAll() {
         WebDriverManager.chromedriver().setup();
     }
+
     @BeforeClass
     void setup() {
         driver = new ChromeDriver();
@@ -33,4 +34,5 @@ public class GoogleHomeTest {
         sa.assertEquals(driver.getTitle(),"Google");
         sa.assertAll();
     }
+
 }
