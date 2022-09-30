@@ -1,4 +1,4 @@
-package data;
+package testdata;
 
 public class BingHomeData {
 

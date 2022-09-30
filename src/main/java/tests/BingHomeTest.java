@@ -1,7 +1,7 @@
 package tests;
 
-import data.BingHomeData;
-import elements.BingHomeElements;
+import testdata.BingHomeData;
+import pageelements.BingHomeElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Keys;
 
