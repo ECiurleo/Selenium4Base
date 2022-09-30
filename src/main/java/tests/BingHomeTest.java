@@ -1,5 +1,6 @@
 package tests;
 
+import data.BingHomeData;
 import elements.BingHomeElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Keys;
@@ -29,18 +30,18 @@ public class BingHomeTest {
         driver.quit();
     }
 
-    @Test (description = "Is the Google Page Title correct")
+    @Test (description = "Is the Bing Search Result Page Title correct?")
     public void pageTitleTest() {
-        driver.get("http://www.bing.com"); //TODO move to baseURL
+        driver.get(BingHomeData.bingHomeURL);
         SoftAssert sa = new SoftAssert();
 
-        sa.assertEquals(driver.getTitle(), "Bing","The page title for the page returned was " + driver.getTitle());
+        sa.assertEquals(driver.getTitle(), BingHomeData.bingHomeTitle,"The page title for the page returned was " + driver.getTitle());
 
         //Perform a search
-        driver.findElement(BingHomeElements.searchBox).sendKeys("Apple");
+        driver.findElement(BingHomeElements.searchBox).sendKeys(BingHomeData.bingHomeSearch);
         driver.findElement(BingHomeElements.searchBox).sendKeys(Keys.RETURN);
 
-        sa.assertEquals(driver.getTitle(), "Apple - Search","The page title for the page returned was " + driver.getTitle());
+        sa.assertEquals(driver.getTitle(), BingHomeData.bingHomeSearchResult,"The page title for the page returned was " + driver.getTitle());
 
         //Assert it all
         sa.assertAll();

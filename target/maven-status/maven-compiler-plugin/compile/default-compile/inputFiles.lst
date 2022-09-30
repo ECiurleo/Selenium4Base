@@ -1,1 +1,3 @@
-/Users/emanuelec/Documents/Source/GitHub/Selenium4Base/src/main/java/tests/GoogleHomeTest.java
+/Users/emanuelec/Documents/Source/GitHub/Selenium4Base/src/main/java/elements/BingHomeElements.java
+/Users/emanuelec/Documents/Source/GitHub/Selenium4Base/src/main/java/tests/BingHomeTest.java
+/Users/emanuelec/Documents/Source/GitHub/Selenium4Base/src/main/java/data/BingHomeData.java

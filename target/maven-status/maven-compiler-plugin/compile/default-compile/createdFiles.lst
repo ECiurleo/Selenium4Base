@@ -1,1 +1,3 @@
-tests/GoogleHomeTest.class
+elements/BingHomeElements.class
+data/BingHomeData.class
+tests/BingHomeTest.class
