@@ -1,5 +1,8 @@
 package tests;
 
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import testdata.BingHomeData;
 import pageelements.BingHomeElements;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +15,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.asserts.SoftAssert;
+
+import java.util.List;
 
 
 public class BingHomeTest {
@@ -42,6 +47,15 @@ public class BingHomeTest {
         driver.findElement(BingHomeElements.searchBox).sendKeys(Keys.RETURN);
 
         sa.assertEquals(driver.getTitle(), BingHomeData.bingHomeSearchResult,"The page title for the page returned was " + driver.getTitle());
+
+        //Output any console errors
+        LogEntries entry = driver.manage().logs().get(LogType.BROWSER);
+        List<LogEntry> Logs = entry.getAll();
+        for (LogEntry log : Logs){
+            System.out.println("Error Level \n" +log.getLevel());
+            System.out.println("Message in console \n" +log.getMessage());
+        }
+        sa.assertEquals(Logs.size(), 0, "Errors present in console");
 
         //Assert it all
         sa.assertAll();
